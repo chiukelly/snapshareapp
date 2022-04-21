@@ -5,7 +5,7 @@ export default function UploadScreen({navigation}) {
   return (
     <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
       <Text
-        onPress={() => navigation.navigate('Home')}
+        onPress={() => navigation.navigate('SnapShare')}
         style={{fontSize: 26, fontWeight: 'bold'}}>
         Upload Screen
       </Text>
