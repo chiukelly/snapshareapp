@@ -1,70 +1,70 @@
 import * as React from 'react';
-import {View, Text} from 'react-native';
-import { useRef, useEffect, useState } from 'react';
+import {Image, View, Platform} from 'react-native';
+import {Button} from 'react-native-paper';
+import { useEffect, useState } from 'react';
+import { Camera } from 'expo-camera';
+import {ImagePicker, Permissions} from 'expo-image-picker';
 
 
 export default function UploadScreen({navigation}) {
-	const videoRef = useRef(null);
-	const photoRef = useRef(null);
+	const [image, setImage] = useState(null);
 
-	const [hasPhoto, setHasPhoto] = useState(false);
+	const pickImage = async () => {
+    // No permissions request is necessary for launching the image library
+		let result = await ImagePicker.launchImageLibraryAsync({
+		mediaTypes: ImagePicker.MediaTypeOptions.All,
+		allowsEditing: true,
+		aspect: [4, 3],
+		quality: 1,
+		});
 
-	const getVideo = () => {
-		navigator.mediaDevices
-			.getUserMedia({
-				video: {width: 1920, height: 1080} 
-			})
-			.then(stream => {
-				let video = videoRef.current;
-				video.srcObject = stream;
-				video.play();
-			})
-			.catch( err => {
-				console.error(err);
-			})
-	}
+		console.log(result);
 
-	const takePhoto = () => {
-		const width = 414;
-		const height = width / (16/9);
+		if (!result.cancelled) {
+			setImage(result.uri);
+		}
+  	};
 
-		let video = videoRef.current;
-		let photo = photoRef.current;
 
-		photo.width = width;
-		photo.height = height;
+	const takeImage = async () => {
+		// No permissions request is necessary for launching the image library
+		const permissions = Permissions.CAMERA;
+		const status = await Permissions.askAsync(permissions);
+		
+		if(status.status !== 'granted'){
+			alert("Allow Camera Permissions")
+		} else{
+			let result = await ImagePicker.launchCameraAsync();
 
-		let ctx = photo.getContext('2d');
-		ctx.drawImage(video, 0, 0, width, height);
-		setHasPhoto(true);
-	}
-
-	const closePhoto = () => {
-		let photo = photoRef.current;
-		let ctx = photo.getContext('2d');
-
-		ctx.clearRect(0, 0, photo.width, photo,height);
-
-		setHasPhoto(false);
-
-	}
-
-	useEffect(() => {
-		getVideo();
-	}, [videoRef])
+			console.log(result);
+			if (!result.cancelled) {
+				setImage(result.uri);
+			}
+		}
+ 
+		
+	};
 
 	return (
-		<View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-			<div className="UploadScreen">
-				<div className="camera">
-					<video ref={videoRef} style={{flex: 1, alignItems: 'center', justifyContent: 'center', width: '30%', height: '30%'}}></video>
-					<button onClick = {takePhoto}>SNAP!</button>
-				</div> 
-				<div className={'result' + (hasPhoto ? 'hasPhoto' : '')}>
-					<canvas ref={photoRef}></canvas>
-					<button>CLOSE!</button>
-				</div>
-			</div>
+		<View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+			<Button color={'#5CB4C1'} labelStyle={{ color: "white" }} mode="contained" onPress={pickImage}> Pick Photo </Button>
+			{image && <Image source={{ uri: image }} style={{ width: 200, height: 200 }} />}
+			<Button color={'#5CB4C1'} labelStyle={{ color: "white" }} mode="contained" onPress={takeImage}> Take Photo </Button>
+			{image && <Image source={{ uri: image }} style={{ width: 200, height: 200 }} />}
 		</View>
-	);
+  );
 }
+
+	// useEffect(() => {
+	// 	(async () => {
+	// 	  const cameraStatus = await Camera.requestPermissionsAsync();
+	// 	  setHasCameraPermission(cameraStatus.status === 'granted');
+	// })();
+	//   }, []);
+
+	// return (
+	// 	<View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
+			
+	// 	</View>
+	// );
+// }

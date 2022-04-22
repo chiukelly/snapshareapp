@@ -59,7 +59,7 @@ export default function MainContainer() {
               bottom: -15,
               color: 'white',
               fontSize: 23, 
-              fontWeight: '10'
+              fontWeight: '300'
             }
         }} />
         <Tab.Screen name={uploadName} component={UploadScreen} />
