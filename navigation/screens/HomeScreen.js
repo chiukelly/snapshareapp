@@ -6,7 +6,7 @@ import {Button} from 'react-native-paper';
 export default function HomeScreen({navigation}) {
   return (
     <View>
-      <View style={{ padding: 50, alignItems: 'center'}}>
+      <View style={{ padding: 40, alignItems: 'center'}}>
         <Text style={{fontSize: 16}}>Today's Prompt</Text>
         <Text style={{fontSize: 40, color: '#FC9188'}}>The Sky</Text>
         <View style={{padding: 20}}>
@@ -17,16 +17,22 @@ export default function HomeScreen({navigation}) {
         </View>
       </View>
       <View style={{flexDirection: "row", justifyContent: 'center'}}>
-        <View style={{paddingRight: 10}}>
-          <Text style={{alignSelf: 'center', paddingBottom: 10}}>Upload Photo</Text>
-          <Button color={'#E2F0BC'} labelStyle={{ color: "#779622"}} mode="contained" onPress={() => navigation.navigate('Upload')}>
-            Upload
+        <View style={{paddingRight: 10, alignItems: 'center'}}>
+          <Text style={{alignSelf: 'center', paddingBottom: 10, fontSize: 24, color: '#535865'}}>Upload Photo</Text>
+          <Button color={'#E2F0BC'} height={80} width={100} mode="contained" onPress={() => navigation.navigate('Upload')}>
+            <Image 
+              style={{height: 60, width: 60}}
+              source={require('./../../assets/upload.png')} 
+            />
           </Button> 
         </View>
-        <View style={{paddingLeft: 10}}>
-          <Text style={{alignSelf: 'center', paddingBottom: 10}}>View Collages</Text>
-          <Button color={'#FBEA9D'} labelStyle={{ color: "#D7B209" }} mode="contained" onPress={() => navigation.navigate('Collages')}>
-            View
+        <View style={{paddingLeft: 10, alignItems: 'center'}}>
+          <Text style={{alignSelf: 'center', paddingBottom: 10, fontSize: 24, color: '#535865'}}>View Collages</Text>
+          <Button color={'#FBEA9D'} height={80} width={100} mode="contained" onPress={() => navigation.navigate('Collages')}>
+          <Image 
+              style={{height: 60, width: 70, alignSelf: 'center', justifyContent: 'center'}}
+              source={require('./../../assets/collage.png')} 
+            />
           </Button>
         </View>
       </View>
