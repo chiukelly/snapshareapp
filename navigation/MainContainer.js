@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import {NavigationContainer} from '@react-navigation/native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import Ionicons from '@expo/vector-icons/Ionicons';
+import {Ionicons, Feather, MaterialCommunityIcons, FontAwesome} from '@expo/vector-icons';
 
 // Screens
 import HomeScreen from './screens/HomeScreen';
@@ -31,18 +31,19 @@ export default function MainContainer() {
             let rn = route.name;
 
             if (rn === homeName) {
-              iconName = focused ? 'ios-home' : 'ios-home-outline';
+              // iconName = focused ? 'ios-home' : 'ios-home-outline';
+              return <Ionicons name='ios-home' color={color} size={size}/>;
             } else if (rn === uploadName) {
-              iconName = focused ? 'list' : 'list-outline';
+              return <Feather name="upload" color={color} size={size} />;
             } else if (rn === collagesName) {
-              iconName = focused ? 'settings' : 'settings-outline';
+              return <MaterialCommunityIcons name="collage" color={color} size={size}/>;
             } else if (rn === promptsName) {
-              iconName = focused ? 'settings' : 'settings-outline';
+              return <FontAwesome name="pencil" color={color} size={size}/>;
             } else if (rn === friendsName) {
-              iconName = focused ? 'settings' : 'settings-outline';
+              return <Ionicons name="ios-people-sharp" color={color} size={size} />;
             }
 
-            return <Ionicons name={iconName} color={color} size={size}/>;
+            // return <Ionicons name={iconName} color={color} size={size}/>;
           },
         })}
         tabBarOptions={{

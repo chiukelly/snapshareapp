@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {Image, View, Text} from 'react-native';
+import {Image, View, Text, Alert} from 'react-native';
 import {Button} from 'react-native-paper';
 import { useEffect, useState } from 'react';
 import { Camera } from 'expo-camera';
