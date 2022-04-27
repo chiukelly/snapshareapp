@@ -15,7 +15,7 @@ import FriendsScreen from './screens/FriendsScreen';
 // Screen names
 const homeName = 'SnapShare';
 const uploadName = 'Upload';
-const collagesName = 'Collages1'; // TODO fix name later 
+const collagesName = 'Collages-bar'; // TODO fix name later 
 const promptsName = 'Prompts';
 const friendsName = 'Friends';
 
@@ -72,7 +72,7 @@ export default function MainContainer() {
             }
         }} />
         <Tab.Screen name={uploadName} component={UploadScreen} />
-        <Tab.Screen name={collagesName} component={CollagesStackScreen} options={{headerShown: false}} />
+        <Tab.Screen name={collagesName} component={CollagesStackScreen} options={{headerShown: false, tabBarLabel: 'Collages'}} />
         <Tab.Screen name={promptsName} component={PromptScreen} />
         <Tab.Screen name={friendsName} component={FriendsScreen} />
       </Tab.Navigator>

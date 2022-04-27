@@ -159,7 +159,6 @@ export default function UploadScreen({ navigation }) {
                     <View style={{ padding: 10 }}>
                         <Button color={'#5CB4C1'} labelStyle={{ color: "white" }} mode="contained" onPress={takeImage}> Take Photo </Button>
                     </View>
-
                 </View>
                 <View style={{ padding: 10 }}>
                     {image && <Image source={{ uri: image }} style={{ width: 200, height: 200 }} />}

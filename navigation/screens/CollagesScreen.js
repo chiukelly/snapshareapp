@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {View, Text, ScrollView, Image} from 'react-native';
+import {View, Text, ScrollView, Image, Button} from 'react-native';
 import { TouchableWithoutFeedback } from 'react-native-gesture-handler';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
@@ -8,7 +8,7 @@ const CollagesStack = createNativeStackNavigator();
 export default function CollagesStackScreen({navigation}) {
   return (
     <CollagesStack.Navigator>
-      <CollagesStack.Screen name="Collages" component={CollagesScreen} />
+      <CollagesStack.Screen name="Collages" component={CollagesScreen} options={{headerShown: false}} />
       <CollagesStack.Screen name="Collage" component={CollageScreen} />
     </CollagesStack.Navigator>
   );
@@ -39,11 +39,9 @@ function CollageScreen() {
 function CollagesScreen({navigation}) {
   return (
     <ScrollView showsVerticalScrollIndicator={false}>
-      <View style={{flex: 1, alignItems: 'center', justifyContent: 'center', padding: 10}}>
+      <View style={{flex: 1, alignItems: 'center', justifyContent: 'center', padding: 70}}>
+        <Text style={{fontSize: 48, color: '#535865'}}>Collages</Text>
         <TouchableWithoutFeedback style={{ margin: 20, height: 160, width: 350}} onPress={() => navigation.navigate('Collage')}>
-          {/* <View style={{height: 150, width: 350, backgroundColor: "gray"}}>
-
-          </View> */}
           <Image 
             style={{height: 150, width: 350}}
             source={require('./../../assets/skydemo1.png')}
