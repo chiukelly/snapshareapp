@@ -15,7 +15,7 @@ import FriendsScreen from './screens/FriendsScreen';
 // Screen names
 const homeName = 'SnapShare';
 const uploadName = 'Upload';
-const collagesName = 'Collages';
+const collagesName = 'Collages1'; // TODO fix name later 
 const promptsName = 'Prompts';
 const friendsName = 'Friends';
 
