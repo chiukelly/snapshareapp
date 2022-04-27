@@ -46,22 +46,29 @@ export default function MainContainer() {
 
             // return <Ionicons name={iconName} color={color} size={size}/>;
           },
+
+          tabBarActiveTintColor: '#5CB4C1',
+          tabBarInactiveTintColor: '#535865',
+          tabBarStyle: [{
+            paddingTop: 10,
+            fontSize: 10
+          }]
         })}
-        tabBarOptions={{
-          activeTintColor: '#5CB4C1',
-          inactiveTintColor: '#535865',
-          barStyle: {paddingBottom: 10, fontSize: 10},
-        }}>
+        // tabBarOptions={{
+        //   activeTintColor: '#5CB4C1',
+        //   inactiveTintColor: '#535865',
+        //   barStyle: {paddingBottom: 10, paddingTop: 20, fontSize: 10},
+        // }}
+        >
         <Tab.Screen name={homeName} component={HomeScreen} options={{
             headerStyle: {
                 backgroundColor: '#5CB4C1', 
                 height: 120,
             }, 
             headerTitleStyle: { 
-              bottom: -15,
               color: 'white',
-              fontSize: 23, 
-              fontWeight: '300'
+              fontSize: 24, 
+              fontWeight: '400'
             }
         }} />
         <Tab.Screen name={uploadName} component={UploadScreen} />

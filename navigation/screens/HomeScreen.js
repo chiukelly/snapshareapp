@@ -6,9 +6,9 @@ import {Button} from 'react-native-paper';
 export default function HomeScreen({navigation}) {
   return (
     <View>
-      <View style={{ padding: 40, alignItems: 'center'}}>
-        <Text style={{fontSize: 20, color: '#535865'}}>Today's Prompt</Text>
-        <Text style={{fontSize: 40, color: '#FC9188'}}>The Sky</Text>
+      <View style={{ padding: 60, alignItems: 'center'}}>
+        <Text style={{fontSize: 24, color: '#535865'}}>Today's Prompt</Text>
+        <Text style={{fontSize: 48, color: '#FC9188'}}>The Sky</Text>
         <View style={{padding: 20}}>
           <Image 
             style={{height: 150, width: 200, borderWidth: 8, borderColor: '#FEDBD7'}}
@@ -30,7 +30,7 @@ export default function HomeScreen({navigation}) {
           <Text style={{alignSelf: 'center', paddingBottom: 10, fontSize: 24, color: '#535865'}}>View Collages</Text>
           <Button color={'#FBEA9D'} height={85} width={105} mode="contained" onPress={() => navigation.navigate('Collages')}>
           <Image 
-              style={{height: 64, width: 56, alignSelf: 'center', justifyContent: 'center'}}
+              style={{height: 64, width: 64, alignSelf: 'center', justifyContent: 'center'}}
               source={require('./../../assets/collage.png')} 
             />
           </Button>
