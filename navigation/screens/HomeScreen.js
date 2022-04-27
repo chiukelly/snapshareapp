@@ -19,18 +19,18 @@ export default function HomeScreen({navigation}) {
       <View style={{flexDirection: "row", justifyContent: 'center'}}>
         <View style={{paddingRight: 10, alignItems: 'center'}}>
           <Text style={{alignSelf: 'center', paddingBottom: 10, fontSize: 24, color: '#535865'}}>Upload Photo</Text>
-          <Button color={'#E2F0BC'} height={80} width={100} mode="contained" onPress={() => navigation.navigate('Upload')}>
+          <Button color={'#E2F0BC'} height={85} width={105} mode="contained" onPress={() => navigation.navigate('Upload')}>
             <Image 
-              style={{height: 60, width: 60}}
+              style={{height: 62, width: 65}}
               source={require('./../../assets/upload.png')} 
             />
           </Button> 
         </View>
         <View style={{paddingLeft: 10, alignItems: 'center'}}>
           <Text style={{alignSelf: 'center', paddingBottom: 10, fontSize: 24, color: '#535865'}}>View Collages</Text>
-          <Button color={'#FBEA9D'} height={80} width={100} mode="contained" onPress={() => navigation.navigate('Collages')}>
+          <Button color={'#FBEA9D'} height={85} width={105} mode="contained" onPress={() => navigation.navigate('Collages')}>
           <Image 
-              style={{height: 60, width: 60, alignSelf: 'center', justifyContent: 'center'}}
+              style={{height: 64, width: 56, alignSelf: 'center', justifyContent: 'center'}}
               source={require('./../../assets/collage.png')} 
             />
           </Button>
