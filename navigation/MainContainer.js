@@ -7,7 +7,8 @@ import {Ionicons, Feather, MaterialCommunityIcons, FontAwesome} from '@expo/vect
 // Screens
 import HomeScreen from './screens/HomeScreen';
 import UploadScreen from './screens/UploadScreen';
-import CollagesScreen from './screens/CollagesScreen';
+// collages and collage page
+import CollagesStackScreen from './screens/CollagesScreen';
 import PromptScreen from './screens/PromptScreen';
 import FriendsScreen from './screens/FriendsScreen';
 
@@ -64,7 +65,7 @@ export default function MainContainer() {
             }
         }} />
         <Tab.Screen name={uploadName} component={UploadScreen} />
-        <Tab.Screen name={collagesName} component={CollagesScreen} />
+        <Tab.Screen name={collagesName} component={CollagesStackScreen} options={{headerShown: false}} />
         <Tab.Screen name={promptsName} component={PromptScreen} />
         <Tab.Screen name={friendsName} component={FriendsScreen} />
       </Tab.Navigator>
