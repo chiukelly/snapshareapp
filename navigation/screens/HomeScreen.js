@@ -7,11 +7,11 @@ export default function HomeScreen({navigation}) {
   return (
     <View>
       <View style={{ padding: 40, alignItems: 'center'}}>
-        <Text style={{fontSize: 16}}>Today's Prompt</Text>
+        <Text style={{fontSize: 20, color: '#535865'}}>Today's Prompt</Text>
         <Text style={{fontSize: 40, color: '#FC9188'}}>The Sky</Text>
         <View style={{padding: 20}}>
           <Image 
-            style={{height: 150, width: 200, borderWidth: 2, borderColor: '#FC9188'}}
+            style={{height: 150, width: 200, borderWidth: 8, borderColor: '#FEDBD7'}}
             source={{ uri:'https://images.unsplash.com/photo-1513002749550-c59d786b8e6c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8c2t5fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60'}}
           />
         </View>
@@ -30,7 +30,7 @@ export default function HomeScreen({navigation}) {
           <Text style={{alignSelf: 'center', paddingBottom: 10, fontSize: 24, color: '#535865'}}>View Collages</Text>
           <Button color={'#FBEA9D'} height={80} width={100} mode="contained" onPress={() => navigation.navigate('Collages')}>
           <Image 
-              style={{height: 60, width: 70, alignSelf: 'center', justifyContent: 'center'}}
+              style={{height: 60, width: 60, alignSelf: 'center', justifyContent: 'center'}}
               source={require('./../../assets/collage.png')} 
             />
           </Button>
