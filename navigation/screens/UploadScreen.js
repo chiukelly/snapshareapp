@@ -148,7 +148,8 @@ export default function UploadScreen({ navigation }) {
     };
 
         return (
-            <View style={{ flex: 1, alignItems: 'center', paddingTop: 30 }}>
+            <View style={{ flex: 1, alignItems: 'center', paddingTop: 70 }}>
+                <Text style={{fontSize: 48, color: '#535865', paddingBottom: 20}}>Upload</Text>
                 <View style={{ backgroundColor: "#DDDFE3", height: 51, width: 300, alignItems: 'center', justifyContent: 'center', borderRadius: 10 }}>
                     <Text style={{ color: "#535865", fontSize: 20 }}> Today's Prompt: The Sky </Text>
                 </View>

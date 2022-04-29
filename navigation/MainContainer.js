@@ -71,10 +71,10 @@ export default function MainContainer() {
               fontWeight: '400'
             }
         }} />
-        <Tab.Screen name={uploadName} component={UploadScreen} />
+        <Tab.Screen name={uploadName} component={UploadScreen}  options={{headerShown: false}} />
         <Tab.Screen name={collagesName} component={CollagesStackScreen} options={{headerShown: false, tabBarLabel: 'Collages'}} />
-        <Tab.Screen name={promptsName} component={PromptScreen} />
-        <Tab.Screen name={friendsName} component={FriendsScreen} />
+        <Tab.Screen name={promptsName} component={PromptScreen} options={{headerShown: false}}/>
+        <Tab.Screen name={friendsName} component={FriendsScreen} options={{headerShown: false}}/>
       </Tab.Navigator>
     </NavigationContainer>
   );
