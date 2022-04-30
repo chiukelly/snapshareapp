@@ -10,15 +10,15 @@ import { initializeApp } from "firebase/app";
 import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
 
 
-// Your web app's Firebase configuration
 const firebaseConfig = {
-    apiKey: "AIzaSyALmB6nYQKK2DY1yd387HR5UqqbW71I5Zk",
-    authDomain: "snapshare-9bc4b.firebaseapp.com",
-    projectId: "snapshare-9bc4b",
-    storageBucket: "snapshare-9bc4b.appspot.com",
-    messagingSenderId: "926904587743",
-    appId: "1:926904587743:web:cec0e5bafbc9ce3a26a06a"
-};
+    apiKey: "AIzaSyAYk2OA5s_SPaJ_QCwLORQdymlT0IbTVnM",
+    authDomain: "snapsharenew.firebaseapp.com",
+    projectId: "snapsharenew",
+    storageBucket: "snapsharenew.appspot.com",
+    messagingSenderId: "234923433559",
+    appId: "1:234923433559:web:e4e373a0da4dabc0724d12",
+    measurementId: "G-CBSZBED7E9"
+  };
 
 export var globalImage = "crap";
 
@@ -148,8 +148,7 @@ export default function UploadScreen({ navigation }) {
     };
 
         return (
-            <View style={{ flex: 1, alignItems: 'center', paddingTop: 70 }}>
-                <Text style={{fontSize: 48, color: '#535865', paddingBottom: 20}}>Upload</Text>
+            <View style={{ flex: 1, alignItems: 'center', paddingTop: 30 }}>
                 <View style={{ backgroundColor: "#DDDFE3", height: 51, width: 300, alignItems: 'center', justifyContent: 'center', borderRadius: 10 }}>
                     <Text style={{ color: "#535865", fontSize: 20 }}> Today's Prompt: The Sky </Text>
                 </View>
