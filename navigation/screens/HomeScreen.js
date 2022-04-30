@@ -7,7 +7,7 @@ export default function HomeScreen({navigation}) {
   return (
     <View>
       <View style={{ padding: 60, alignItems: 'center'}}>
-        <Text style={{fontSize: 24, color: '#535865'}}>Today's Prompt</Text>
+        <Text style={{fontSize: 20, color: '#535865'}}>Today's Prompt</Text>
         <Text style={{fontSize: 48, color: '#FC9188'}}>The Sky</Text>
         <View style={{padding: 20}}>
           <Image 
@@ -17,8 +17,8 @@ export default function HomeScreen({navigation}) {
         </View>
       </View>
       <View style={{flexDirection: "row", justifyContent: 'center'}}>
-        <View style={{paddingRight: 10, alignItems: 'center'}}>
-          <Text style={{alignSelf: 'center', paddingBottom: 10, fontSize: 24, color: '#535865'}}>Upload Photo</Text>
+        <View style={{paddingRight: 15, alignItems: 'center'}}>
+          <Text style={{alignSelf: 'center', paddingBottom: 10, fontSize: 20, color: '#535865'}}>Upload Photo</Text>
           <Button color={'#E2F0BC'} height={85} width={105} mode="contained" onPress={() => navigation.navigate('Upload')}>
             <Image 
               style={{height: 62, width: 65}}
@@ -26,8 +26,8 @@ export default function HomeScreen({navigation}) {
             />
           </Button> 
         </View>
-        <View style={{paddingLeft: 10, alignItems: 'center'}}>
-          <Text style={{alignSelf: 'center', paddingBottom: 10, fontSize: 24, color: '#535865'}}>View Collages</Text>
+        <View style={{paddingLeft: 15, alignItems: 'center'}}>
+          <Text style={{alignSelf: 'center', paddingBottom: 10, fontSize: 20, color: '#535865'}}>View Collages</Text>
           <Button color={'#FBEA9D'} height={85} width={105} mode="contained" onPress={() => navigation.navigate('Collages')}>
           <Image 
               style={{height: 64, width: 64, alignSelf: 'center', justifyContent: 'center'}}

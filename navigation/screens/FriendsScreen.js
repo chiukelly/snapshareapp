@@ -6,9 +6,8 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 export default function FriendsScreen({navigation}) {
   return (
     <ScrollView showsVerticalScrollIndicator={false}>
-      <View style={{flex: 1, alignItems: 'center', justifyContent: 'center', padding: 70}}>
+      <View style={{flex: 1, alignItems: 'center', justifyContent: 'center', paddingTop: 70}}>
         <Text style={{fontSize: 48, color: '#535865'}}>Your Friends</Text>
-
       </View>
     </ScrollView>
   );
