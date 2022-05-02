@@ -50,9 +50,13 @@ export var imageRefArr = []; //NEED TO FILL THIS WITH IMAGES
 export var imageFileArr = []; //Stores UR
 
 function renderItem({ item }) {
-  console.log("rendering item")
-  console.log(item)
-	return <Image source={{ uri: item }} style={{ height: 100 }} />;
+  	console.log("rendering item")
+  	console.log("item, ", item)
+	return <Image 
+		style={{width: '100%', height: '50%'}}
+        source={{uri:'https://engineering.fb.com/wp-content/uploads/2016/04/yearinreview.jpg'}} 
+		/>;
+	// return <Image source={{ uri: item }} style={{ height: 100 }} />;
 }
 
 const getPictureUrlArray = async () => {
@@ -85,6 +89,7 @@ function CollageScreen() {
 
 	//canvas to display images
 	const [images, setImages] = React.useState(imageFileArr);
+	const [loading, setLoading] = React.useState(true);
 
 	// List all files in sky/world
 	// Create a reference under which you want to list
@@ -111,29 +116,58 @@ function CollageScreen() {
 			//Get image file from image ref
 			let response = await getPictureUrlArray();
 			console.log("image count: ", imageCount);
-      await setImages(imageFileArr) //Might not work
+      		let set = await setImages(imageFileArr) //Might not work
 		});
-    console.log(imageFileArr)
-    console.log(images)
-	
-  return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      {/* <View>
-        {images.map(img => <Image source={{uri : img}} style={{ height: 100 }} />)}
-      </View>  */}
-      <FlatList data={images} renderItem={renderItem}></FlatList>
-        <View style={{height: 50, width: 400, backgroundColor: "#5CB4C1", justifyContent: 'center'}}>
-          <View style={{flexDirection: 'row'}}>
-            <Text style={{paddingLeft: 10, marginRight: 'auto', color: 'white'}}>
-              Sky
-            </Text>
-            <Text style={{paddingRight: 10, marginLeft: 'auto', color: 'white'}}>
-              March 20, 2022
-            </Text>
-          </View>
-        </View>
-    </View>
-  );
+
+		// setTimeout(() => {
+		// 	setLoading(true)
+		// 	console.log(images)
+		//  }, 2000)
+
+		if(!loading){
+			return( 
+				<View>
+					<Text>
+						loading...
+					</Text>	
+				</View> 
+			)
+		}else{
+			return (
+				<View style={{ flex: 1 , alignItems: 'center', justifyContent: 'center'}}>
+
+					{/* {imageFileArr.map((url) => (
+						<Image 
+							source={{ uri: url }} 
+							style={{
+								height: 100,
+								width: 100
+							}} 
+						/>
+					))} */}
+					<View style={{ flexDirection: "row", justifyContent: 'center'}}>
+						<Image 
+							style={{height: 300, width: 200}}
+							source={require('./../../assets/skydemo2.jpeg')}
+						/>
+						<Image 
+							style={{height: 300, width: 200}}
+							source={require('./../../assets/skydemo1.png')}
+						/>
+					</View>
+					<View style={{height: 50, width: 400, backgroundColor: "#5CB4C1", justifyContent: 'center'}}>
+					<View style={{flexDirection: 'row'}}>
+						<Text style={{paddingLeft: 10, marginRight: 'auto', color: 'white'}}>
+						Sky
+						</Text>
+						<Text style={{paddingRight: 10, marginLeft: 'auto', color: 'white'}}>
+						March 20, 2022
+						</Text>
+					</View>
+					</View>
+				</View>
+			);
+		}
 }
 
 function CollagesScreen({navigation}) {

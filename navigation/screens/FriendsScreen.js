@@ -23,18 +23,18 @@ export default function FriendsScreen({navigation}) {
           style={styles.input} 
           onChangeText={onChangeText} 
           value={text} 
-          placeholder="Search Friend :"
+          placeholder="Search Friend"
         />
         <ScrollView>
           { friends.map((item) => {
             return (
               <View key={item.key} style={styles.item} >
                 <Image
-                  style={{height: 50, width: 50}}
+                  style={{flex: 0, width: 60, height: 60}}
                   source={item.image} 
                 /> 
-                <Text style={{color: '#535865'}} >{item.friend}</Text>
-                <MaterialIcons name="cancel" size={24} color="red"/>
+                <Text style={{color: '#535865', fontSize: 24, flex: 5, paddingLeft: 10}} > {item.friend}</Text>
+                <MaterialIcons name="cancel" size={24} color='#FC9188' style={{flex: 0}}/>
               </View>
             )
           })}
@@ -50,14 +50,15 @@ const styles = StyleSheet.create({
     borderWidth: 0,
     padding: 10,
     borderRadius: 10,
-    width: 350,
+    width: 325,
     backgroundColor: '#dedcdc'
   },
   item: {
     flex: 1,
-    //marginTop: 20,
+    alignItems: 'center',
+    // marginTop: 20,
     padding: 20,
-    //backgroundColor: '#FEDBD7',
+    // backgroundColor: '#FEDBD7',
     fontSize: 20,
     width: 350,
     flexDirection: 'row',

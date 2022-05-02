@@ -19,19 +19,22 @@ export default function PromptScreen({navigation}) {
       <View style={{flex: 1, alignItems: 'center', justifyContent: 'center', paddingTop: 70}}>
         <Text style={{fontSize: 48, color: '#535865', paddingBottom: 0}}>Prompt</Text>
         <Text style={{fontSize: 48, color: '#535865', paddingTop: 0}}>Suggestions</Text>
-        <Text style={{fontSize: 30, color: '#535865', paddingTop: 30}}>Category: Food</Text>
+        <Text style={{fontSize: 28, color: '#535865', paddingTop: 30, paddingBottom: 5}}>Category: Food</Text>
+        <View style={{flexDirection: 'row', alignItems: 'center'}}>
         <TextInput 
           style={styles.input} 
           onChangeText={onChangeText} 
           value={text} 
           placeholder="Enter a Prompt Suggestion :)"
         />
-        <Text style={{fontSize: 20, color: '#535865', paddingTop: 30}}>Vote for Tomorrow's Prompt!</Text>
+        <MaterialCommunityIcons name="send" size={24} color='#535865' />
+        </View>
+        <Text style={{fontSize: 22, color: '#535865', paddingTop: 30}}>Vote for Tomorrow's Prompt!</Text>
         <ScrollView>
           { prompts.map((item) => {
             return (
               <View key={item.key} style={styles.item} >
-                <Text style={{color: '#535865'}}>{item.prompt}</Text>
+                <Text style={{color: '#535865', fontSize: 18}}>{item.prompt}</Text>
                 <LikeButton style={{alignSelf: 'flex-end'}}></LikeButton>
               </View>
             )
@@ -49,15 +52,14 @@ const styles = StyleSheet.create({
     padding: 10,
     borderRadius: 10,
     width: 300,
-    backgroundColor: '#dedcdc'
+    backgroundColor: '#dedcdc',
   },
   item: {
     flex: 1,
     marginTop: 20,
     padding: 20,
     backgroundColor: '#FEDBD7',
-    fontSize: 15,
-    width: 300,
+    width: 325,
     flexDirection: 'row',
     borderRadius: 15,
     justifyContent: 'space-between'
@@ -72,7 +74,7 @@ const LikeButton = () => {
     <Pressable onPress={() => setLiked((isLiked) => !isLiked)}> 
         <MaterialCommunityIcons
           name={liked ? "heart" : "heart-outline"}
-          size={20}
+          size={24}
           color={liked ? '#FC9188' : '#535865'}
         />
     </Pressable>
