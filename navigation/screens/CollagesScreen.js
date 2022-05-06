@@ -104,7 +104,7 @@ function CollageScreen() {
 			res.items.forEach((itemRef) => {
 				// All the items under listRef.
 				imageRefArr.push(itemRef);
-				//getPictureUrlArray();
+				getPictureUrlArray();
 				imageCount = imageCount + 1;
 
 				//console.log(imageRefArr.length);
@@ -119,10 +119,10 @@ function CollageScreen() {
       		let set = await setImages(imageFileArr) //Might not work
 		});
 
-		// setTimeout(() => {
-		// 	setLoading(true)
-		// 	console.log(images)
-		//  }, 2000)
+		setTimeout(() => {
+			setLoading(true)
+			console.log(images)
+		 }, 2000)
 
 		if(!loading){
 			return( 
@@ -146,14 +146,23 @@ function CollageScreen() {
 						/>
 					))} */}
 					<View style={{ flexDirection: "row", justifyContent: 'center'}}>
-						<Image 
+						{/* <Image 
 							style={{height: 300, width: 200}}
 							source={require('./../../assets/skydemo2.jpeg')}
 						/>
 						<Image 
 							style={{height: 300, width: 200}}
 							source={require('./../../assets/skydemo1.png')}
+						/> */}
+						{imageFileArr.map((url) => (
+						<Image 
+							source={{ uri: url }} 
+							style={{
+								height: 100,
+								width: 100
+							}} 
 						/>
+					))}
 					</View>
 					<View style={{height: 50, width: 400, backgroundColor: "#5CB4C1", justifyContent: 'center'}}>
 					<View style={{flexDirection: 'row'}}>
