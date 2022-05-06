@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { useState } from 'react';
-import {View, Text, ScrollView, Image, Button, TextInput, StyleSheet, Pressable} from 'react-native';
+import {View, Text, ScrollView, Image, Button, TextInput, StyleSheet, Pressable, Alert} from 'react-native';
 import { TouchableWithoutFeedback } from 'react-native-gesture-handler';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { MaterialCommunityIcons } from "@expo/vector-icons";
@@ -15,6 +15,11 @@ export default function PromptScreen({navigation}) {
     {prompt: 'Sweets', key: '5'},
   ])
 
+  const createTwoButtonAlert = () =>
+    Alert.alert('Suggestion Sent!', 'Thank you for your prompt suggestion', [
+      { text: 'OK', onPress: () => console.log('OK Pressed') },
+    ]);
+
   return (
       <View style={{flex: 1, alignItems: 'center', justifyContent: 'center', paddingTop: 70}}>
         <Text style={{fontSize: 48, color: '#535865', paddingBottom: 0}}>Prompt</Text>
@@ -27,7 +32,10 @@ export default function PromptScreen({navigation}) {
           value={text} 
           placeholder="Enter a Prompt Suggestion :)"
         />
-        <MaterialCommunityIcons name="send" size={24} color='#535865' />
+        <Pressable onPress={createTwoButtonAlert}>
+          <MaterialCommunityIcons name="send" size={24} color='#535865' />
+        </Pressable>
+        
         </View>
         <Text style={{fontSize: 22, color: '#535865', paddingTop: 30}}>Vote for Tomorrow's Prompt!</Text>
         <ScrollView>
