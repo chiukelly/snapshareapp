@@ -8,13 +8,13 @@ import { getStorage, ref, listAll, getDownloadURL } from "firebase/storage";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-	apiKey: "AIzaSyAYk2OA5s_SPaJ_QCwLORQdymlT0IbTVnM",
-	authDomain: "snapsharenew.firebaseapp.com",
-	projectId: "snapsharenew",
-	storageBucket: "snapsharenew.appspot.com",
-	messagingSenderId: "234923433559",
-	appId: "1:234923433559:web:e4e373a0da4dabc0724d12",
-	measurementId: "G-CBSZBED7E9"
+    apiKey: "AIzaSyDK0GFRyw5EiWFqAMgq7_yVyM2pBPRJQpY",
+    authDomain: "snapshare2-fa1b1.firebaseapp.com",
+    projectId: "snapshare2-fa1b1",
+    storageBucket: "snapshare2-fa1b1.appspot.com",
+    messagingSenderId: "3959654155",
+    appId: "1:3959654155:web:a01378620746efb10ec40e",
+    measurementId: "G-8NRSPH0M61"
   };
 
 //Firebase stuuf
