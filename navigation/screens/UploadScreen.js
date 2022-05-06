@@ -11,13 +11,12 @@ import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
 
 
 const firebaseConfig = {
-    apiKey: "AIzaSyDK0GFRyw5EiWFqAMgq7_yVyM2pBPRJQpY",
-    authDomain: "snapshare2-fa1b1.firebaseapp.com",
-    projectId: "snapshare2-fa1b1",
-    storageBucket: "snapshare2-fa1b1.appspot.com",
-    messagingSenderId: "3959654155",
-    appId: "1:3959654155:web:a01378620746efb10ec40e",
-    measurementId: "G-8NRSPH0M61"
+    apiKey: "AIzaSyAvWVzT3RGX5qT2vsodMLKj4_QpjGzkywc",
+    authDomain: "snapsharefinal.firebaseapp.com",
+    projectId: "snapsharefinal",
+    storageBucket: "snapsharefinal.appspot.com",
+    messagingSenderId: "767923470975",
+    appId: "1:767923470975:web:d5c7e984a7106874e9354a"
   };
 
 export var globalImage = "crap";
