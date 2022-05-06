@@ -158,7 +158,7 @@ function CollageScreen() {
 						<Image 
 							source={{ uri: url }} 
 							style={{
-								height: 100,
+								height: 300,
 								width: 100
 							}} 
 						/>
@@ -166,10 +166,10 @@ function CollageScreen() {
 					</View>
 					<View style={{height: 50, width: 400, backgroundColor: "#5CB4C1", justifyContent: 'center'}}>
 					<View style={{flexDirection: 'row'}}>
-						<Text style={{paddingLeft: 10, marginRight: 'auto', color: 'white'}}>
+						<Text style={{paddingLeft: 20, marginRight: 'auto', color: 'white'}}>
 						Sky
 						</Text>
-						<Text style={{paddingRight: 10, marginLeft: 'auto', color: 'white'}}>
+						<Text style={{paddingRight: 20, marginLeft: 'auto', color: 'white'}}>
 						March 20, 2022
 						</Text>
 					</View>
