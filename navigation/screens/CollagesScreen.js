@@ -62,7 +62,7 @@ function renderItem({ item }) {
 const getPictureUrlArray = async () => {
 	var i = 0;
 	imageRefArr.forEach(async function(curRef) {
-		//console.log(i);
+		console.log("i1" + i);
 		//add file to array
 		var response = await getDownloadURL(ref(storage, curRef))
 		.then((url) => { 
@@ -71,14 +71,13 @@ const getPictureUrlArray = async () => {
 			imageFileArr.push(url);
 
 			console.log("url: ", imageFileArr[i]);
-	
+			console.log("i" + i);
 		})
 		.catch((error) => {
 			// Handle any errors
 		});
 
     i = i + 1;
-		// console.log(imageFileArr);
 	});
 
 }
@@ -89,11 +88,12 @@ function CollageScreen() {
 
 	//canvas to display images
 	const [images, setImages] = React.useState(imageFileArr);
-	const [loading, setLoading] = React.useState(true);
+	const [loading, setLoading] = React.useState(false);
 
 	// List all files in sky/world
 	// Create a reference under which you want to list
 	const listRef = ref(storage, 'sky/world');
+	const newSet = new Set();
 	// Find all the prefixes and items.
 	listAll(listRef)
 		.then((res) => {
@@ -117,6 +117,8 @@ function CollageScreen() {
 			let response = await getPictureUrlArray();
 			console.log("image count: ", imageCount);
       		let set = await setImages(imageFileArr) //Might not work
+			newSet = new Set(imageFileArr)
+			imageFileArr= Array.from(mySet);
 		});
 
 		setTimeout(() => {
@@ -154,6 +156,7 @@ function CollageScreen() {
 							style={{height: 300, width: 200}}
 							source={require('./../../assets/skydemo1.png')}
 						/> */}
+
 						{imageFileArr.map((url) => (
 						<Image 
 							source={{ uri: url }} 

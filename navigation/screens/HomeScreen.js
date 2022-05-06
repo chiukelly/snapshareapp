@@ -28,7 +28,7 @@ export default function HomeScreen({navigation}) {
         </View>
         <View style={{paddingLeft: 15, alignItems: 'center'}}>
           <Text style={{alignSelf: 'center', paddingBottom: 10, fontSize: 20, color: '#535865'}}>View Collages</Text>
-          <Button color={'#FBEA9D'} height={85} width={105} mode="contained" onPress={() => navigation.navigate('Collages')}>
+          <Button color={'#FBEA9D'} height={85} width={105} mode="contained" onPress={() => navigation.navigate('Collages-bar')}>
           <Image 
               style={{height: 64, width: 64, alignSelf: 'center', justifyContent: 'center'}}
               source={require('./../../assets/collage.png')} 
